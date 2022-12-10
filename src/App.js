@@ -21,7 +21,7 @@ function App() {
     return (
         <div className="App">
           <Chatlist chats={chats} setActiveChat={setActiveChat} activeChat={activeChat}/>
-          <Chat/>
+          <Chat activeChat={activeChat} chats={chats}/>
         </div>
     );
 }
