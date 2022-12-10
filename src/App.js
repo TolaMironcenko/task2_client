@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import Chat from "./components/Chat";
+import Chatlist from "./components/Chatlist";
+import {useEffect, useState} from "react";
+import routes from "./routes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [chats, setChats] = useState([])
+    const [activeChat, setActiveChat] = useState(undefined)
+
+    useEffect(() => {
+        fetch(routes.chats(), {
+        })
+            .then(res => res.json())
+            .then(result => {
+                setChats(result)
+                console.log(chats)
+            })
+    }, [])
+
+    return (
+        <div className="App">
+          <Chatlist chats={chats} setActiveChat={setActiveChat} activeChat={activeChat}/>
+          <Chat/>
+        </div>
+    );
 }
 
 export default App;
