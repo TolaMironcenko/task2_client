@@ -26,7 +26,7 @@ const Chatlist = ({chats, activeChat, setActiveChat}) => {
                 chats.map(chat => {
                     return(
                         <Chatblock
-                            onClick={() => {setActiveChat(chat.id);console.log(chats.filter(chat => {return chat.id === activeChat})[0].avatar)}}
+                            onClick={() => {setActiveChat(chat.id);console.log(chats)}}
                             active={activeChat === chat.id}
                             key={chat.id}
                             username={chat.name}

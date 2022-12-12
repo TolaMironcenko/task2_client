@@ -10,52 +10,63 @@ const Chat = ({chats, activeChat}) => {
             {
                 activeChat !== undefined
                 ?<><div className={'chathead'}>
-                <Avatar image={activeChat !== undefined?chats.filter(chat => {return chat.id === activeChat})[0].avatar:''}/>
-                <h3 className={'username'}>{activeChat !== undefined?chats.filter(chat => {return chat.id === activeChat})[0].name:''}</h3>
+                <Avatar image={activeChat?chats.filter(chat => {return chat.id === activeChat})[0].avatar:''}/>
+                <h3 className={'username'}>{activeChat?chats.filter(chat => {return chat.id === activeChat})[0].name:''}</h3>
             </div>
             <div className={'chatbody'}>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
-                <Messageblock/>
+                {
+                    chats.filter(chat => {return chat.id === activeChat})[0].messages.map(message => {
+                        return(
+                            <Messageblock
+                                position={message.from_user === 'admin'}
+                                key={message.id}
+                                message={message.text}
+                            />
+                        )
+                    })
+                }
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
+                {/*<Messageblock/>*/}
             </div>
             <div className={'chatfoot'}>
                 <input type={"text"} className={'chatinput'} placeholder={'Write message to send'}/>
