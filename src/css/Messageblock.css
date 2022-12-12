@@ -45,6 +45,17 @@
     color: white;
 }
 
+.time {
+    font-size: 10px;
+    color: rgba(100, 100, 100, 0.7);
+}
+
+.timeright {
+    font-size: 10px;
+    color: rgba(100, 100, 100, 0.7);
+    text-align: right;
+}
+
 @keyframes togo {
     0% {
         transform: scale(0);
