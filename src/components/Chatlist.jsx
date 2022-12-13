@@ -4,19 +4,6 @@ import Chatblock from "./Chatblock";
 
 const Chatlist = ({chats, activeChat, setActiveChat}) => {
 
-    // const [chats, setChats] = useState([])
-
-    // useEffect(() => {
-    //     fetch(routes.chats(), {
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             setChats(result)
-    //             console.log(chats)
-    //         })
-    // }, [])
-
-
     return (
         <div className={'chatlist'}>
             {
