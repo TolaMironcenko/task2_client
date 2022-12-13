@@ -19,6 +19,7 @@ function App() {
                 })
           }, 500);
           return () => clearInterval(interval);
+          // eslint-disable-next-line
     }, [])
 
     return (

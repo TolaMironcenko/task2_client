@@ -23,13 +23,12 @@
 
 .messageboxright {
     padding: 10px;
-    margin: 5px;
     border-radius: 10px;
     background-color: rgb(0, 0, 0);
     position: relative;
     width: max-content;
     max-width: 95%;
-    margin-left: auto;
+    margin: 5px 5px 5px auto;
     color: white;
 }
 
